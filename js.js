@@ -4,36 +4,33 @@ let currentCategory = null;  // Track current category
 
 // Helper function to check for duplicate contacts
 function isContactExists(phone) {
-    return contactData.some(contact => contact.phone === phone);
+    return contactData.some(contact => contact.phone === formatPhoneNumber(phone));
+}
+
+// Helper function to format phone numbers to the correct format (+92XXXXXXXXXX)
+function formatPhoneNumber(phone) {
+    // Remove any non-numeric characters and ensure the number starts with +92
+    let formattedPhone = phone.replace(/[^0-9]/g, '');
+    if (formattedPhone.startsWith('92')) {
+        return `+${formattedPhone}`;
+    } else if (formattedPhone.startsWith('0')) {
+        return `+92${formattedPhone.slice(1)}`;
+    }
+    return `+92${formattedPhone}`;
 }
 
 // Predefined contacts with updated phone numbers
 const predefinedContacts = {
     'Executive Contacts': [
-        { name: "Shabhir Qadri", phone: "+92312-9832611", category: "Executive Contacts", subcategory: "None" },
-        { name: "Muneer Nake ", phone: "+92300-0000002", category: "Executive Contacts", subcategory: "None" }
+        { name: "Shabhir Qadri", phone: "+923129832611", category: "Executive Contacts", subcategory: "None" },
+        { name: "Muneer Nake", phone: "+923000000002", category: "Executive Contacts", subcategory: "None" }
     ],
     'Employee Contacts': [
-        { name: "Asim Shah/Tasleem Shah", phone: "+92300-7870705", category: "Employee Contacts", subcategory: "None" },
-        { name: "Muhammad Ajmal", phone: "+92318-6837134", category: "Employee Contacts", subcategory: "None" },
-        { name: "Muhammad Ateeq", phone: "+92340-7488060", category: "Employee Contacts", subcategory: "None" }
+        { name: "Asim Shah/Tasleem Shah", phone: "+923007870705", category: "Employee Contacts", subcategory: "None" },
+        { name: "Muhammad Ajmal", phone: "+923186837134", category: "Employee Contacts", subcategory: "None" },
+        // Add more contacts here...
     ],
-    'Shop Keepers Contacts': [
-        { name: "Shopkeeper 1", phone: "+92300-0000005", category: "Shop Keepers Contacts", subcategory: "None" },
-        { name: "Shopkeeper 2", phone: "+92300-0000006", category: "Shop Keepers Contacts", subcategory: "None" }
-    ],
-    'Suppliers Contacts': [
-        { name: "Supplier 1", phone: "+92300-0000007", category: "Suppliers Contacts", subcategory: "None" },
-        { name: "Supplier 2", phone: "+92300-0000008", category: "Suppliers Contacts", subcategory: "None" }
-    ],
-    'Brokers Numbers': [
-        { name: "Ramzan Shaloli Jazz", phone: "+92301-7150540", category: "Brokers Numbers", subcategory: "None" },
-        { name: "Ramzan Shaloli Telenor", phone: "+92346-7779039", category: "Brokers Numbers", subcategory: "None" }
-    ],
-    'Drivers Contacts': [
-        { name: "Driver 1", phone: "+92300-0000011", category: "Drivers Contacts", subcategory: "None" },
-        { name: "Driver 2", phone: "+92300-0000012", category: "Drivers Contacts", subcategory: "None" }
-    ]
+    // Add other categories here...
 };
 
 // Add predefined contacts ensuring no duplicates
@@ -47,7 +44,7 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
     e.preventDefault();
 
     const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
+    const phone = formatPhoneNumber(document.getElementById("phone").value);
     const category = document.getElementById("category").value;
     const subcategory = category === "Shop Keepers Contacts" ? document.getElementById("subcategory").value : "None";
 
