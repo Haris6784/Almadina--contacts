@@ -16,19 +16,7 @@ const predefinedContacts = {
     'Employee Contacts': [
         { name: "Asim Shah/Tasleem Shah", phone: "+92300-7870705", category: "Employee Contacts", subcategory: "None" },
         { name: "Muhammad Ajmal", phone: "+92318-6837134", category: "Employee Contacts", subcategory: "None" },
-        { name: "Muhammad Ateeq", phone: "+92340-7488060", category: "Employee Contacts", subcategory: "None" },
-        { name: "Waqas Ahmed Dhoon", phone: "+92306-9052240", category: "Employee Contacts", subcategory: "None" },
-        { name: "Waqas Ahmed Jora", phone: "+92301-6067646", category: "Employee Contacts", subcategory: "None" },
-        { name: "Muhammad Fawad Azam", phone: "+92304-8523826", category: "Employee Contacts", subcategory: "None" },
-        { name: "Faraz Sadeeqi", phone: "+92312-5829431", category: "Employee Contacts", subcategory: "None" },
-        { name: "Syed Najaf Ali Shah", phone: "+92342-9329803", category: "Employee Contacts", subcategory: "None" },
-        { name: "Asim Khan", phone: "+92305-2443790", category: "Employee Contacts", subcategory: "None" },
-        { name: "Nemat Ullah", phone: "+92332-5062164", category: "Employee Contacts", subcategory: "None" },
-        { name: "Maqsood ul Hassan", phone: "+92319-6538656", category: "Employee Contacts", subcategory: "None" },
-        { name: "Muhammad Bilal", phone: "+92316-7460238", category: "Employee Contacts", subcategory: "None" },
-        { name: "Muhammad Irfan", phone: "+92310-7878370", category: "Employee Contacts", subcategory: "None" },
-        { name: "Muhammad Haris", phone: "+92309-0295583", category: "Employee Contacts", subcategory: "None" },
-        { name: "Ahtesham", phone: "+92320-0956752", category: "Employee Contacts", subcategory: "None" }
+        { name: "Muhammad Ateeq", phone: "+92340-7488060", category: "Employee Contacts", subcategory: "None" }
     ],
     'Shop Keepers Contacts': [
         { name: "Shopkeeper 1", phone: "+92300-0000005", category: "Shop Keepers Contacts", subcategory: "None" },
@@ -40,19 +28,13 @@ const predefinedContacts = {
     ],
     'Brokers Numbers': [
         { name: "Ramzan Shaloli Jazz", phone: "+92301-7150540", category: "Brokers Numbers", subcategory: "None" },
-        { name: "Ramzan Shaloli Telenor", phone: "+92346-7779039", category: "Brokers Numbers", subcategory: "None" },
-        { name: "Rana Habib Mithu", phone: "+92300-2667626", category: "Brokers Numbers", subcategory: "None" }
+        { name: "Ramzan Shaloli Telenor", phone: "+92346-7779039", category: "Brokers Numbers", subcategory: "None" }
     ],
     'Drivers Contacts': [
         { name: "Driver 1", phone: "+92300-0000011", category: "Drivers Contacts", subcategory: "None" },
         { name: "Driver 2", phone: "+92300-0000012", category: "Drivers Contacts", subcategory: "None" }
-    ],
-    'Local Contacts': [
-        { name: "Driver 1", phone: "+92300-0000011", category: "Drivers Contacts", subcategory: "None" },
-        { name: "Driver 2", phone: "+92300-0000012", category: "Drivers Contacts", subcategory: "None" }
     ]
 };
-
 
 // Add predefined contacts ensuring no duplicates
 Object.values(predefinedContacts).forEach(addUniqueContacts);
